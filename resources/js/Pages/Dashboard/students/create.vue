@@ -15,13 +15,39 @@
                         <div>
                             <base-input type="email" label="Email address" name="email" v-model="form.email" :error="$page.errors.email" required></base-input>
                         </div>
-                        <div>
-                            <base-input label="Password" type="password" v-model="form.password" :error="$page.errors.password" required></base-input>
+                     <div>
+                            <label class="block" for="">
+                                <span class="text-gray-700">
+                                Country
+                                </span>
+
+                                <select class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full" name="country_id" v-model="form.country_id">
+                                    <option value="">Choose</option>
+
+                                    <option :value="country.id" v-for="country in countries" :key="country.index">
+                                        {{country.name}}
+                                    </option>
+                                </select>
+                            </label>
                         </div>
-                        <base-input label="Password confirmation" type="password" v-model="form.password_confirmation" required></base-input>
+                              <div>
+                            <label class="block" for="">
+                                <span class="text-gray-700">
+                                Class
+                                </span>
+
+                                <select class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full" name="classe_id" v-model="form.classe_id">
+                                    <option value="">Choose</option>
+                                    <option :value="classe.id" v-for="classe in classes" :key="classe.index">
+                                        {{classe.name}}
+                                    </option>
+                                </select>
+                            </label>
+                        </div>
+                   
                     </div>
                     <div class="flex justify-end mt-4">
-                        <base-button primary>Create user</base-button>
+                        <base-button primary>Create Student</base-button>
                     </div>
                 </form>
             </base-panel>
@@ -32,24 +58,26 @@
 </template>
 
 <script>
-    import Layout from "../../../Shared/Layout";
+import Layout from "../../../Shared/Layout";
 
-    export default {
-        components: {Layout},
-        data() {
-            return {
-                form: {
-                    name: '',
-                    email: '',
-                    password: '',
-                    password_confirmation: '',
-                }
-            }
-        },
-        methods: {
-            submit() {
-                this.$inertia.post('/dashboard/students', this.form);
-            }
-        }
-    }
+export default {
+  components: { Layout },
+      props:['countries','classes'],
+
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        country_id: "",
+        classe_id: "",
+      },
+    };
+  },
+  methods: {
+    submit() {
+      this.$inertia.post("/dashboard/students", this.form);
+    },
+  },
+};
 </script>

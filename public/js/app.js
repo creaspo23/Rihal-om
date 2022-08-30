@@ -2695,24 +2695,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  props: ['countries', 'classes'],
   data: function data() {
     return {
       form: {
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: ''
+        name: "",
+        email: "",
+        country_id: "",
+        classe_id: ""
       }
     };
   },
   methods: {
     submit: function submit() {
-      this.$inertia.post('/dashboard/students', this.form);
+      this.$inertia.post("/dashboard/students", this.form);
     }
   }
 });
@@ -6528,44 +6555,144 @@ var render = function () {
                     1
                   ),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    [
-                      _c("base-input", {
-                        attrs: {
-                          label: "Password",
-                          type: "password",
-                          error: _vm.$page.errors.password,
-                          required: "",
-                        },
-                        model: {
-                          value: _vm.form.password,
-                          callback: function ($$v) {
-                            _vm.$set(_vm.form, "password", $$v)
+                  _c("div", [
+                    _c("label", { staticClass: "block", attrs: { for: "" } }, [
+                      _c("span", { staticClass: "text-gray-700" }, [
+                        _vm._v(
+                          "\n                            Country\n                            "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.country_id,
+                              expression: "form.country_id",
+                            },
+                          ],
+                          staticClass:
+                            "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
+                          attrs: { name: "country_id" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "country_id",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
                           },
-                          expression: "form.password",
                         },
-                      }),
-                    ],
-                    1
-                  ),
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Choose"),
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.countries, function (country) {
+                            return _c(
+                              "option",
+                              {
+                                key: country.index,
+                                domProps: { value: country.id },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(country.name) +
+                                    "\n                                "
+                                ),
+                              ]
+                            )
+                          }),
+                        ],
+                        2
+                      ),
+                    ]),
+                  ]),
                   _vm._v(" "),
-                  _c("base-input", {
-                    attrs: {
-                      label: "Password confirmation",
-                      type: "password",
-                      required: "",
-                    },
-                    model: {
-                      value: _vm.form.password_confirmation,
-                      callback: function ($$v) {
-                        _vm.$set(_vm.form, "password_confirmation", $$v)
-                      },
-                      expression: "form.password_confirmation",
-                    },
-                  }),
-                ],
-                1
+                  _c("div", [
+                    _c("label", { staticClass: "block", attrs: { for: "" } }, [
+                      _c("span", { staticClass: "text-gray-700" }, [
+                        _vm._v(
+                          "\n                            Class\n                            "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.classe_id,
+                              expression: "form.classe_id",
+                            },
+                          ],
+                          staticClass:
+                            "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
+                          attrs: { name: "classe_id" },
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.form,
+                                "classe_id",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            },
+                          },
+                        },
+                        [
+                          _c("option", { attrs: { value: "" } }, [
+                            _vm._v("Choose"),
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.classes, function (classe) {
+                            return _c(
+                              "option",
+                              {
+                                key: classe.index,
+                                domProps: { value: classe.id },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(classe.name) +
+                                    "\n                                "
+                                ),
+                              ]
+                            )
+                          }),
+                        ],
+                        2
+                      ),
+                    ]),
+                  ]),
+                ]
               ),
               _vm._v(" "),
               _c(
@@ -6573,7 +6700,7 @@ var render = function () {
                 { staticClass: "flex justify-end mt-4" },
                 [
                   _c("base-button", { attrs: { primary: "" } }, [
-                    _vm._v("Create user"),
+                    _vm._v("Create Student"),
                   ]),
                 ],
                 1

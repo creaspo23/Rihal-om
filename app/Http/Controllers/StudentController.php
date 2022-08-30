@@ -14,19 +14,24 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        $classes = Classes::all();
-        $countries = Country::all();
+
+
 
         return inertia()->render('Dashboard/students/index', [
             'students' => $students,
-            'classes' => $classes,
-            'countries' => $countries,
+
         ]);
     }
 
     public function create()
     {
-        return inertia()->render('Dashboard/students/create');
+        $classes = Classes::all();
+        $countries = Country::all();
+        
+        return inertia()->render('Dashboard/students/create', [
+            'classes' => $classes,
+            'countries' => $countries,
+        ]);
     }
 
     public function store(Request $request)
