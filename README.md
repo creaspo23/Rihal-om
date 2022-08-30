@@ -7,9 +7,9 @@
 
 - composer install 
 
--cp .env .env.example
+- cp .env .env.example
 
--php artisan key:generate
+- php artisan key:generate
 
 - php artisan migrate --seed 
 
