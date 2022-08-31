@@ -11,6 +11,20 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <base-input label="Name" name="name" v-model="form.name" :error="$page.errors.name" required></base-input>
                         <base-input type="date" label="Date Of Birth" name="date_of_birth" v-model="form.date_of_birth" :error="$page.errors.date_of_birth" required></base-input>
+
+                        <label class="block" for="">
+                                <span class="text-gray-700">
+                                Country Name
+                                </span>
+
+                                <select class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full" name="country_id" v-model="form.country_id">
+                                    <option value="">Choose</option>
+                                    <option :value="country.id" v-for="country in countries" :key="country.index">
+                                        {{country.name}}
+                                    </option>
+                                </select>
+                            </label>
+
                             <label class="block" for="">
                                 <span class="text-gray-700">
                                 Class Name
@@ -24,18 +38,7 @@
                                 </select>
                             </label>
 
-                                <label class="block" for="">
-                                <span class="text-gray-700">
-                                Country Name
-                                </span>
-
-                                <select class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full" name="country_id" v-model="form.country_id">
-                                    <option value="">Choose</option>
-                                    <option :value="country_id" v-for="country in countries" :key="country.index">
-                                        {{country.name}}
-                                    </option>
-                                </select>
-                            </label>
+                   
                         </div>
                    
            
@@ -59,10 +62,10 @@ export default {
   data() {
     return {
       form: {
-         name: "",
-        date_of_birth:"",
-        country_id: "",
-        classe_id: "",
+        name: '',
+        date_of_birth:'',
+        country_id: '',
+        classe_id: '',
       },
     };
   },

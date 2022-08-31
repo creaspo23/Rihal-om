@@ -2813,6 +2813,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2822,10 +2825,10 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        name: "",
-        date_of_birth: "",
-        country_id: "",
-        classe_id: ""
+        name: '',
+        date_of_birth: '',
+        country_id: '',
+        classe_id: ''
       }
     };
   },
@@ -3238,6 +3241,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -6842,6 +6848,73 @@ var render = function () {
                   _c("label", { staticClass: "block", attrs: { for: "" } }, [
                     _c("span", { staticClass: "text-gray-700" }, [
                       _vm._v(
+                        "\n                            Country Name\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.country_id,
+                            expression: "form.country_id",
+                          },
+                        ],
+                        staticClass:
+                          "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
+                        attrs: { name: "country_id" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "country_id",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "" } }, [
+                          _vm._v("Choose"),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.countries, function (country) {
+                          return _c(
+                            "option",
+                            {
+                              key: country.index,
+                              domProps: { value: country.id },
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(country.name) +
+                                  "\n                                "
+                              ),
+                            ]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "block", attrs: { for: "" } }, [
+                    _c("span", { staticClass: "text-gray-700" }, [
+                      _vm._v(
                         "\n                            Class Name\n                            "
                       ),
                     ]),
@@ -6896,73 +6969,6 @@ var render = function () {
                               _vm._v(
                                 "\n                                    " +
                                   _vm._s(classe.name) +
-                                  "\n                                "
-                              ),
-                            ]
-                          )
-                        }),
-                      ],
-                      2
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("label", { staticClass: "block", attrs: { for: "" } }, [
-                    _c("span", { staticClass: "text-gray-700" }, [
-                      _vm._v(
-                        "\n                            Country Name\n                            "
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.country_id,
-                            expression: "form.country_id",
-                          },
-                        ],
-                        staticClass:
-                          "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
-                        attrs: { name: "country_id" },
-                        on: {
-                          change: function ($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function (o) {
-                                return o.selected
-                              })
-                              .map(function (o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              _vm.form,
-                              "country_id",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
-                          },
-                        },
-                      },
-                      [
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Choose"),
-                        ]),
-                        _vm._v(" "),
-                        _vm._l(_vm.countries, function (country) {
-                          return _c(
-                            "option",
-                            {
-                              key: country.index,
-                              domProps: { value: _vm.country_id },
-                            },
-                            [
-                              _vm._v(
-                                "\n                                    " +
-                                  _vm._s(country.name) +
                                   "\n                                "
                               ),
                             ]
@@ -7995,12 +8001,13 @@ var render = function () {
                     _c(
                       "svg",
                       {
-                        staticClass: "w-6 text-gray-500",
+                        staticClass: "w-6 h-6 text-gray-500",
                         attrs: {
-                          fill: "none",
-                          stroke: "currentColor",
-                          viewBox: "0 0 24 24",
                           xmlns: "http://www.w3.org/2000/svg",
+                          fill: "none",
+                          viewBox: "0 0 24 24",
+                          "stroke-width": "1.5",
+                          stroke: "currentColor",
                         },
                       },
                       [
@@ -8008,8 +8015,7 @@ var render = function () {
                           attrs: {
                             "stroke-linecap": "round",
                             "stroke-linejoin": "round",
-                            "stroke-width": "2",
-                            d: "M4 6h16M4 12h16M4 18h16",
+                            d: "M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819",
                           },
                         }),
                       ]
