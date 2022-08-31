@@ -11,7 +11,7 @@ class ClassController extends Controller
     public function index()
     {
         $classes = Classes::all();
-
+     
         return inertia()->render('Dashboard/classes/index', [
             'classes' => $classes
         ]);

@@ -8,6 +8,7 @@
                         <div class="mr-2">
                             <base-input name="name" v-model="form.name" :error="$page.errors.name" placeholder="Country name" required></base-input>
                         </div>
+               
                         <div>
                             <base-button primary>Create Country</base-button>
                         </div>

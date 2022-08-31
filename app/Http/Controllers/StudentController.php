@@ -27,7 +27,7 @@ class StudentController extends Controller
     {
         $classes = Classes::all();
         $countries = Country::all();
-        
+
         return inertia()->render('Dashboard/students/create', [
             'classes' => $classes,
             'countries' => $countries,
@@ -36,12 +36,15 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+
         $data = $request->validate([
             'name' => 'required',
-            'date_of_birith' => 'required',
-            'class_id' => 'required',
-            'country_id' => 'required',
+            'date_of_birth' => 'required',
+            'country_id' => 'required|exists:countries,id',
+            'classe_id' => 'required|exists:classes,id'
         ]);
+
+
 
         Student::create($data);
 
@@ -55,7 +58,14 @@ class StudentController extends Controller
 
     public function edit(Student $student)
     {
-        return inertia()->render('Dashboard/students/edit', ['student' => $student]);
+        $classes = Classes::all();
+        $countries = Country::all();
+
+        return inertia()->render('Dashboard/students/edit', [
+            'student' => $student,
+            'classes' => $classes,
+            'countries' => $countries,
+        ]);
     }
 
     public function update(Request $request, Student $student)
@@ -63,12 +73,10 @@ class StudentController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'date_of_birth' => 'required',
-            'class_id' => 'required',
-            'country_id' => 'required'
+            'country_id' => 'required|exists:countries,id',
+            'classe_id' => 'required|exists:classes,id'
 
         ]);
-
-
 
         $student->update($data);
 

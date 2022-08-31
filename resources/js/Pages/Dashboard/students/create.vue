@@ -12,9 +12,11 @@
                         <div>
                             <base-input label="Name" name="name" v-model="form.name" :error="$page.errors.name" required></base-input>
                         </div>
+                      
                         <div>
-                            <base-input type="email" label="Email address" name="email" v-model="form.email" :error="$page.errors.email" required></base-input>
+                            <base-input  type="date" label="Date Of Birth" name="date_of_birth" v-model="form.date_of_birth" :error="$page.errors.date_of_birth" required></base-input>
                         </div>
+                
                      <div>
                             <label class="block" for="">
                                 <span class="text-gray-700">
@@ -23,6 +25,7 @@
 
                                 <select class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full" name="country_id" v-model="form.country_id">
                                     <option value="">Choose</option>
+
 
                                     <option :value="country.id" v-for="country in countries" :key="country.index">
                                         {{country.name}}
@@ -46,6 +49,7 @@
                         </div>
                    
                     </div>
+                         
                     <div class="flex justify-end mt-4">
                         <base-button primary>Create Student</base-button>
                     </div>
@@ -68,7 +72,7 @@ export default {
     return {
       form: {
         name: "",
-        email: "",
+        date_of_birth:"",
         country_id: "",
         classe_id: "",
       },

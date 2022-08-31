@@ -2620,6 +2620,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2721,6 +2722,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2731,7 +2736,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         name: "",
-        email: "",
+        date_of_birth: "",
         country_id: "",
         classe_id: ""
       }
@@ -2784,28 +2789,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['student'],
+  props: ["student", "countries", "classes"],
   data: function data() {
     return {
       form: {
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: ''
+        name: "",
+        date_of_birth: "",
+        country_id: "",
+        classe_id: ""
       }
     };
   },
   created: function created() {
-    this.form = this.user;
+    this.form = this.student;
   },
   methods: {
     submit: function submit() {
-      this.$inertia.put(this.$route('students.update', this.student.id), this.form);
+      this.$inertia.put(this.$route("students.update", this.student.id), this.form);
     }
   }
 });
@@ -2885,6 +2914,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2892,7 +2937,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: ['students'],
   methods: {
-    Delete: function Delete(user) {
+    Delete: function Delete(student) {
       this.$inertia["delete"]("/dashboard/students/".concat(this.student.id));
     }
   }
@@ -3193,8 +3238,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -6537,18 +6580,18 @@ var render = function () {
                     [
                       _c("base-input", {
                         attrs: {
-                          type: "email",
-                          label: "Email address",
-                          name: "email",
-                          error: _vm.$page.errors.email,
+                          type: "date",
+                          label: "Date Of Birth",
+                          name: "date_of_birth",
+                          error: _vm.$page.errors.date_of_birth,
                           required: "",
                         },
                         model: {
-                          value: _vm.form.email,
+                          value: _vm.form.date_of_birth,
                           callback: function ($$v) {
-                            _vm.$set(_vm.form, "email", $$v)
+                            _vm.$set(_vm.form, "date_of_birth", $$v)
                           },
-                          expression: "form.email",
+                          expression: "form.date_of_birth",
                         },
                       }),
                     ],
@@ -6781,46 +6824,154 @@ var render = function () {
                   _vm._v(" "),
                   _c("base-input", {
                     attrs: {
-                      type: "email",
-                      label: "Email address",
-                      name: "email",
-                      error: _vm.$page.errors.email,
+                      type: "date",
+                      label: "Date Of Birth",
+                      name: "date_of_birth",
+                      error: _vm.$page.errors.date_of_birth,
                       required: "",
                     },
                     model: {
-                      value: _vm.form.email,
+                      value: _vm.form.date_of_birth,
                       callback: function ($$v) {
-                        _vm.$set(_vm.form, "email", $$v)
+                        _vm.$set(_vm.form, "date_of_birth", $$v)
                       },
-                      expression: "form.email",
+                      expression: "form.date_of_birth",
                     },
                   }),
                   _vm._v(" "),
-                  _c("base-input", {
-                    attrs: {
-                      label: "Password",
-                      type: "password",
-                      error: _vm.$page.errors.password,
-                    },
-                    model: {
-                      value: _vm.form.password,
-                      callback: function ($$v) {
-                        _vm.$set(_vm.form, "password", $$v)
+                  _c("label", { staticClass: "block", attrs: { for: "" } }, [
+                    _c("span", { staticClass: "text-gray-700" }, [
+                      _vm._v(
+                        "\n                            Class Name\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.classe_id,
+                            expression: "form.classe_id",
+                          },
+                        ],
+                        staticClass:
+                          "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
+                        attrs: { name: "classe_id" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "classe_id",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
                       },
-                      expression: "form.password",
-                    },
-                  }),
+                      [
+                        _c("option", { attrs: { value: "" } }, [
+                          _vm._v("Choose"),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.classes, function (classe) {
+                          return _c(
+                            "option",
+                            {
+                              key: classe.index,
+                              domProps: { value: classe.id },
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(classe.name) +
+                                  "\n                                "
+                              ),
+                            ]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                  ]),
                   _vm._v(" "),
-                  _c("base-input", {
-                    attrs: { label: "Password confirmation", type: "password" },
-                    model: {
-                      value: _vm.form.password_confirmation,
-                      callback: function ($$v) {
-                        _vm.$set(_vm.form, "password_confirmation", $$v)
+                  _c("label", { staticClass: "block", attrs: { for: "" } }, [
+                    _c("span", { staticClass: "text-gray-700" }, [
+                      _vm._v(
+                        "\n                            Country Name\n                            "
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.country_id,
+                            expression: "form.country_id",
+                          },
+                        ],
+                        staticClass:
+                          "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
+                        attrs: { name: "country_id" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "country_id",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
                       },
-                      expression: "form.password_confirmation",
-                    },
-                  }),
+                      [
+                        _c("option", { attrs: { value: "" } }, [
+                          _vm._v("Choose"),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.countries, function (country) {
+                          return _c(
+                            "option",
+                            {
+                              key: country.index,
+                              domProps: { value: _vm.country_id },
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(country.name) +
+                                  "\n                                "
+                              ),
+                            ]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                  ]),
                 ],
                 1
               ),
@@ -6928,15 +7079,38 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                                    Email\n                                "
+                              "\n                                    Date Of Birth\n                                "
                             ),
                           ]
                         ),
                         _vm._v(" "),
-                        _c("th", {
-                          staticClass:
-                            "px-6 py-3 border-b border-gray-200 bg-gray-50",
-                        }),
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                            staticStyle: { "text-align": "start" },
+                          },
+                          [
+                            _vm._v(
+                              "\n                                    Class Name\n                                "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                            staticStyle: { "text-align": "start" },
+                          },
+                          [
+                            _vm._v(
+                              "\n                                    Country Name\n                                "
+                            ),
+                          ]
+                        ),
                       ]),
                     ]),
                     _vm._v(" "),
@@ -6969,7 +7143,37 @@ var render = function () {
                             [
                               _vm._v(
                                 "\n                                    " +
-                                  _vm._s(student.email) +
+                                  _vm._s(student.date_of_birth) +
+                                  "\n                                "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "px-6 py-4 whitespace-no-wrap border-b border-gray-200",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(student.classe.name) +
+                                  "\n                                "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "px-6 py-4 whitespace-no-wrap border-b border-gray-200",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(student.country.name) +
                                   "\n                                "
                               ),
                             ]
@@ -7869,8 +8073,6 @@ var render = function () {
           }),
           _vm._v(" "),
           _c("ul", { staticClass: "mt-6 md:hidden" }, [
-            _vm._m(0),
-            _vm._v(" "),
             _c(
               "li",
               { staticClass: "px-2 py-3 hover:bg-gray-900 rounded mt-2" },
@@ -7891,22 +8093,7 @@ var render = function () {
     ]
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "li",
-      { staticClass: "px-2 py-3 hover:bg-gray-900 rounded mt-2" },
-      [
-        _c("a", { staticClass: "mx-2 text-gray-300", attrs: { href: "#" } }, [
-          _vm._v("Account Settings"),
-        ]),
-      ]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -65,9 +65,7 @@
             </ul>
             <div class="border-t border-gray-700 -mx-2 mt-2 md:hidden"></div>
             <ul class="mt-6 md:hidden">
-                <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
-                    <a href="#" class="mx-2 text-gray-300">Account Settings</a>
-                </li>
+                
                 <li class="px-2 py-3 hover:bg-gray-900 rounded mt-2">
                     <button class="mx-2 text-gray-300" @click="logout">Logout</button>
                 </li>

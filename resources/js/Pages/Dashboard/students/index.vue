@@ -27,9 +27,18 @@
                                     </th>
                                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                                         style="text-align: start">
-                                        Email
+                                        Date Of Birth
                                     </th>
-                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+
+                                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                        style="text-align: start">
+                                        Class Name
+                                    </th>
+
+                                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                        style="text-align: start">
+                                        Country Name
+                                    </th>
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white text-gray-700">
@@ -38,8 +47,15 @@
                                         {{ student.name }}
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        {{ student.email }}
+                                        {{ student.date_of_birth }}
                                     </td>
+                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        {{ student.classe.name }}
+                                    </td>
+                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        {{ student.country.name }}
+                                    </td>
+
 
                                     <td class="flex px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
                                         <inertia-link :href="`/dashboard/students/${student.id}/edit`" class="text-indigo-600 hover:text-indigo-900">
@@ -68,7 +84,7 @@
         components: {Layout},
         props: ['students'],
         methods: {
-            Delete(user){
+            Delete(student){
                      this.$inertia.delete(`/dashboard/students/${this.student.id}`);
             }
         },

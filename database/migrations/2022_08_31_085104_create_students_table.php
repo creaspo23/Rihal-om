@@ -17,8 +17,8 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('date_of_birth');
-            // $table->foreign('class_id');
-            // $table->foreign('country_id');
+            $table->foreignId('classe_id');
+            $table->foreignId('country_id');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('students');
     }
 }
