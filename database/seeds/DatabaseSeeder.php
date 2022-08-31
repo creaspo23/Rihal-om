@@ -1,5 +1,6 @@
 <?php
 
+use App\Student;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
@@ -18,8 +19,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            ClasseSeeder::class,
-            CountrySeeder::class
+            StudentSeeder::class
         ]);
     }
 }
