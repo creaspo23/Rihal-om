@@ -1,4 +1,4 @@
-# Riahl -om
+# Riahl Om
 
 
 # Installation 
