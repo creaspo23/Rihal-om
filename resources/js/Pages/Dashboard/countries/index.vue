@@ -39,7 +39,7 @@
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white text-gray-700">
-                                <tr class="border-b border-gray-200" v-for="country in countries" :key="country.index">
+                                <tr class="border-b border-gray-200" v-for="country in countries.data" :key="country.index">
                                     <td class="px-6 py-4 whitespace-no-wrap">
                                         {{ country.id }}
                                     </td>
@@ -60,17 +60,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+    <pagination :links="countries.links"></pagination>
 
+            </div>
+
+        </div>
     </layout>
 </template>
 
 <script>
-import Layout from '../../../Shared/Layout'
+import Layout from '../../../Shared/Layout';
+import Pagination from "../../../Shared/Pagination";
 import Edit from '../countries/Edit'
     export default {
-        components: {Layout,Edit},
+        components: {Layout,Edit,Pagination},
         props:['countries'],
         data() {
             return {
@@ -89,9 +92,7 @@ import Edit from '../countries/Edit'
             Delete(category){
                      this.$inertia.delete(`/dashboard/countries/${country.id}`);
             },
-            // showInput(category){
-            //     this.show = category.id
-            // }
+       
         }
     }
 </script>

@@ -10,8 +10,8 @@ class CountryController extends Controller
 {
     public function index()
     {
-        $countries = Country::all();
-
+        $countries = Country::latest()->simplePaginate(50);
+      
         return inertia()->render('Dashboard/countries/index', [
             'countries' => $countries
         ]);

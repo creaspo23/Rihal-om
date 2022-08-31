@@ -42,7 +42,7 @@
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white text-gray-700">
-                                <tr v-for="student in students" :key="student.index">
+                                <tr v-for="student in students.data" :key="student.index">
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                         {{ student.name }}
                                     </td>
@@ -72,6 +72,8 @@
                     </div>
                 </div>
             </div>
+    <pagination :links="students.links"></pagination>
+
         </div>
 
     </layout>
@@ -79,9 +81,11 @@
 
 <script>
     import Layout from "../../../Shared/Layout";
+   import Pagination from'../../../Shared/Pagination';
+
 
     export default {
-        components: {Layout},
+        components: {Layout,Pagination},
         props: ['students'],
         methods: {
             Delete(student){

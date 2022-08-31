@@ -38,7 +38,7 @@
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white text-gray-700">
-                                <tr class="border-b border-gray-200" v-for="classe in classes" :key="classe.index">
+                                <tr class="border-b border-gray-200" v-for="classe in classes.data" :key="classe.id">
                                     <td class="px-6 py-4 whitespace-no-wrap">
                                         {{ classe.id }}
                                     </td>
@@ -60,6 +60,8 @@
                     </div>
                 </div>
             </div>
+    <Pagination :links="classes.links"></Pagination>
+
         </div>
 
     </layout>
@@ -67,9 +69,11 @@
 
 <script>
 import Layout from '../../../Shared/Layout'
+import Pagination from'../../../Shared/Pagination';
+
 import Edit from '../classes/Edit'
     export default {
-        components: {Layout,Edit},
+        components: {Layout,Edit,Pagination},
         props:['classes'],
         data() {
             return {

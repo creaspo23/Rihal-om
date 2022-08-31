@@ -13,10 +13,8 @@ class StudentController extends Controller
 
     public function index()
     {
-        $students = Student::all();
-
-
-
+        $students = Student::latest()->simplePaginate(50);
+        
         return inertia()->render('Dashboard/students/index', [
             'students' => $students,
 

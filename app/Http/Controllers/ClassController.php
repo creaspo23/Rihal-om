@@ -10,7 +10,7 @@ class ClassController extends Controller
 {
     public function index()
     {
-        $classes = Classes::all();
+        $classes = Classes::latest()->simplePaginate(50);
      
         return inertia()->render('Dashboard/classes/index', [
             'classes' => $classes
