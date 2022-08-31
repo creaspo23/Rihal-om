@@ -7,6 +7,8 @@
 
 - composer install 
 
+- npm install && npm run dev
+
 - cp .env .env.example
 
 - php artisan key:generate
