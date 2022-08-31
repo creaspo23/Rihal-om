@@ -85,7 +85,7 @@
         props: ['students'],
         methods: {
             Delete(student){
-                     this.$inertia.delete(`/dashboard/students/${this.student.id}`);
+                     this.$inertia.delete(`/dashboard/students/${student.id}`);
             }
         },
     }

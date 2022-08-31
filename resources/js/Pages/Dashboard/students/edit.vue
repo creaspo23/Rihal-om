@@ -59,8 +59,8 @@ export default {
   data() {
     return {
       form: {
-        name: "",
-        date_of_birth: "",
+         name: "",
+        date_of_birth:"",
         country_id: "",
         classe_id: "",
       },

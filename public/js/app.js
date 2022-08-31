@@ -2938,7 +2938,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['students'],
   methods: {
     Delete: function Delete(student) {
-      this.$inertia["delete"]("/dashboard/students/".concat(this.student.id));
+      this.$inertia["delete"]("/dashboard/students/".concat(student.id));
     }
   }
 });
