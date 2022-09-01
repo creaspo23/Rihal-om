@@ -10,10 +10,10 @@
                                 <div class="flex flex-wrap">
                                     <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                                         <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                            New users
+                                            Student
                                         </h5>
                                         <span class="font-semibold text-xl text-gray-800">
-                          2,356
+                                            {{students_number}}
                         </span>
                                     </div>
                                     <div class="relative w-auto px-2 flex-initial">
@@ -27,14 +27,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-sm text-gray-500 mt-4">
-                      <span class="text-red-500 mr-2">
-                        <i class="fas fa-arrow-down"></i> 3.48%
-                      </span>
-                                    <span class="whitespace-no-wrap">
-                        Since last week
-                      </span>
-                                </p>
+                  
                             </div>
                         </div>
                     </div>
@@ -44,10 +37,10 @@
                                 <div class="flex flex-wrap">
                                     <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                                         <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                            Sales
+                                            Countries
                                         </h5>
                                         <span class="font-semibold text-xl text-gray-800">
-                          924
+                          {{country_number}}
                         </span>
                                     </div>
                                     <div class="relative w-auto px-2 flex-initial">
@@ -61,14 +54,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-sm text-gray-500 mt-4">
-                      <span class="text-orange-500 mr-2">
-                        <i class="fas fa-arrow-down"></i> 1.10%
-                      </span>
-                                    <span class="whitespace-no-wrap">
-                        Since yesterday
-                      </span>
-                                </p>
+                      
                             </div>
                         </div>
                     </div>
@@ -78,10 +64,10 @@
                                 <div class="flex flex-wrap">
                                     <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                                         <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                            Performance
+                                            classes
                                         </h5>
                                         <span class="font-semibold text-xl text-gray-800">
-                          49,65%
+                          {{classe_number}}
                         </span>
                                     </div>
                                     <div class="relative w-auto px-2 flex-initial">
@@ -95,14 +81,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="text-sm text-gray-500 mt-4">
-                      <span class="text-green-500 mr-2">
-                        <i class="fas fa-arrow-up"></i> 12%
-                      </span>
-                                    <span class="whitespace-no-wrap">
-                        Since last month
-                      </span>
-                                </p>
+                     
                             </div>
                         </div>
                     </div>
@@ -110,8 +89,11 @@
             </div>
         </div>
 
-        <!-- <div class="mt-12">
-            <h2 class="text-2xl font-medium">Tables</h2>
+    <div class="col">
+
+
+        <div class="mt-3">
+            <h2 class="text-2xl font-medium">Student Per Class</h2>
             <div class="mt-4">
                 <div class="flex flex-col">
                     <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6">
@@ -122,94 +104,83 @@
                                 <tr>
                                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                                         style="text-align: start">
-                                        Name
+                                        Class Name
                                     </th>
                                     <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
                                         style="text-align: start">
-                                        Title
+                                        Student Count
                                     </th>
-                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                                        style="text-align: start">
-                                        Status
-                                    </th>
-                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
-                                        style="text-align: start">
-                                        Role
-                                    </th>
-                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                              
                                 </tr>
                                 </thead>
-                                <tbody class="bg-white">
-                                <tr>
+                                <tbody class="bg-white" v-for="classe in classes" :key="classe.id">
+                                <tr >
+                         
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0 h-10 w-10">
-                                                <img class="h-10 w-10 rounded-full"
-                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                                     alt=""/>
-                                            </div>
-                                            <div class="mx-2">
-                                                <div class="text-sm leading-5 font-medium text-gray-900">Jone Doe</div>
-                                                <div class="text-sm leading-5 text-gray-500">bernardlane@example.com</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        Software Engineer
+                                       {{classe.name}}
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                   <span
                                       class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                    Active
+                                    {{classe.student.length}}
                                   </span>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                        Owner
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
-                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                    </td>
+                               
                                 </tr>
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0 h-10 w-10">
-                                                <img class="h-10 w-10 rounded-full"
-                                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                                     alt=""/>
-                                            </div>
-                                            <div class="mx-2">
-                                                <div class="text-sm leading-5 font-medium text-gray-900">Jone Doe</div>
-                                                <div class="text-sm leading-5 text-gray-500">bernardlane@example.com</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        Actor
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                  <span
-                                      class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                    Active
-                                  </span>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                        Owner
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 font-medium">
-                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                    </td>
-                                </tr>
+                         
+                                
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
-
-
-
+        </div>
+          <div class="mt-3">
+            <h2 class="text-2xl font-medium">Student Per country</h2>
+            <div class="mt-4">
+                <div class="flex flex-col">
+                    <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6">
+                        <div
+                            class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                            <table class="min-w-full">
+                                <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                        style="text-align: start">
+                                        Country Name
+                                    </th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                        style="text-align: start">
+                                        Student Count
+                                    </th>
+                              
+                                </tr>
+                                </thead>
+                                <tbody class="bg-white" v-for="country in countires" :key="country.id">
+                                <tr>
+                         
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                       {{country.name}}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                  <span
+                                      class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    {{country.student.length}}
+                                  </span>
+                                    </td>
+                               
+                                </tr>
+                         
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </layout>
 </template>
@@ -218,6 +189,9 @@
     import Layout from "../../Shared/Layout";
 
     export default {
-        components: {Layout}
+        props:['students_number','country_number','classe_number','classes','countires'],
+        components: {Layout},
+
     }
+ 
 </script>

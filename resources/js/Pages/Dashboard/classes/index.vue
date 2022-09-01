@@ -9,7 +9,7 @@
                             <base-input name="name" v-model="form.name" :error="$page.errors.name" placeholder="class name" required></base-input>
                         </div>
                         <div>
-                            <base-button primary>Create class</base-button>
+                            <base-button primary>Create Class</base-button>
                         </div>
                     </form>
                 </div>

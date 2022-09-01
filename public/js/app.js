@@ -2122,37 +2122,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['students_number', 'country_number', 'classe_number', 'classes', 'countires'],
   components: {
     Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -2745,7 +2717,7 @@ __webpack_require__.r(__webpack_exports__);
         name: "",
         date_of_birth: "",
         country_id: "",
-        classe_id: ""
+        classes_id: ""
       }
     };
   },
@@ -5096,7 +5068,7 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                                        New users\n                                    "
+                              "\n                                        Student\n                                    "
                             ),
                           ]
                         ),
@@ -5108,7 +5080,9 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                      2,356\n                    "
+                              "\n                                        " +
+                                _vm._s(_vm.students_number) +
+                                "\n                    "
                             ),
                           ]
                         ),
@@ -5152,19 +5126,6 @@ var render = function () {
                       ]
                     ),
                   ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-sm text-gray-500 mt-4" }, [
-                    _c("span", { staticClass: "text-red-500 mr-2" }, [
-                      _c("i", { staticClass: "fas fa-arrow-down" }),
-                      _vm._v(" 3.48%\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "whitespace-no-wrap" }, [
-                      _vm._v(
-                        "\n                    Since last week\n                  "
-                      ),
-                    ]),
-                  ]),
                 ]),
               ]
             ),
@@ -5195,7 +5156,7 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                                        Sales\n                                    "
+                              "\n                                        Countries\n                                    "
                             ),
                           ]
                         ),
@@ -5207,7 +5168,9 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                      924\n                    "
+                              "\n                      " +
+                                _vm._s(_vm.country_number) +
+                                "\n                    "
                             ),
                           ]
                         ),
@@ -5251,19 +5214,6 @@ var render = function () {
                       ]
                     ),
                   ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-sm text-gray-500 mt-4" }, [
-                    _c("span", { staticClass: "text-orange-500 mr-2" }, [
-                      _c("i", { staticClass: "fas fa-arrow-down" }),
-                      _vm._v(" 1.10%\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "whitespace-no-wrap" }, [
-                      _vm._v(
-                        "\n                    Since yesterday\n                  "
-                      ),
-                    ]),
-                  ]),
                 ]),
               ]
             ),
@@ -5294,7 +5244,7 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                                        Performance\n                                    "
+                              "\n                                        classes\n                                    "
                             ),
                           ]
                         ),
@@ -5306,7 +5256,9 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                      49,65%\n                    "
+                              "\n                      " +
+                                _vm._s(_vm.classe_number) +
+                                "\n                    "
                             ),
                           ]
                         ),
@@ -5350,20 +5302,235 @@ var render = function () {
                       ]
                     ),
                   ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-sm text-gray-500 mt-4" }, [
-                    _c("span", { staticClass: "text-green-500 mr-2" }, [
-                      _c("i", { staticClass: "fas fa-arrow-up" }),
-                      _vm._v(" 12%\n                  "),
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "whitespace-no-wrap" }, [
-                      _vm._v(
-                        "\n                    Since last month\n                  "
-                      ),
-                    ]),
-                  ]),
                 ]),
+              ]
+            ),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "mt-3" }, [
+        _c("h2", { staticClass: "text-2xl font-medium" }, [
+          _vm._v("Student Per Class"),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-4" }, [
+          _c("div", { staticClass: "flex flex-col" }, [
+            _c(
+              "div",
+              { staticClass: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6" },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
+                  },
+                  [
+                    _c(
+                      "table",
+                      { staticClass: "min-w-full" },
+                      [
+                        _c("thead", { staticClass: "bg-gray-100" }, [
+                          _c("tr", [
+                            _c(
+                              "th",
+                              {
+                                staticClass:
+                                  "px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                                staticStyle: { "text-align": "start" },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Class Name\n                                "
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "th",
+                              {
+                                staticClass:
+                                  "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                                staticStyle: { "text-align": "start" },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Student Count\n                                "
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.classes, function (classe) {
+                          return _c(
+                            "tbody",
+                            { key: classe.id, staticClass: "bg-white" },
+                            [
+                              _c("tr", [
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass:
+                                      "px-6 py-4 whitespace-no-wrap border-b border-gray-200",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                   " +
+                                        _vm._s(classe.name) +
+                                        "\n                                "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass:
+                                      "px-6 py-4 whitespace-no-wrap border-b border-gray-200",
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800",
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                " +
+                                            _vm._s(classe.student.length) +
+                                            "\n                              "
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                              ]),
+                            ]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-3" }, [
+        _c("h2", { staticClass: "text-2xl font-medium" }, [
+          _vm._v("Student Per country"),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mt-4" }, [
+          _c("div", { staticClass: "flex flex-col" }, [
+            _c(
+              "div",
+              { staticClass: "-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6" },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200",
+                  },
+                  [
+                    _c(
+                      "table",
+                      { staticClass: "min-w-full" },
+                      [
+                        _c("thead", { staticClass: "bg-gray-100" }, [
+                          _c("tr", [
+                            _c(
+                              "th",
+                              {
+                                staticClass:
+                                  "px-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                                staticStyle: { "text-align": "start" },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Country Name\n                                "
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "th",
+                              {
+                                staticClass:
+                                  "px-6 py-3 border-b border-gray-200 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider",
+                                staticStyle: { "text-align": "start" },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Student Count\n                                "
+                                ),
+                              ]
+                            ),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.countires, function (country) {
+                          return _c(
+                            "tbody",
+                            { key: country.id, staticClass: "bg-white" },
+                            [
+                              _c("tr", [
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass:
+                                      "px-6 py-4 whitespace-no-wrap border-b border-gray-200",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                   " +
+                                        _vm._s(country.name) +
+                                        "\n                                "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "td",
+                                  {
+                                    staticClass:
+                                      "px-6 py-4 whitespace-no-wrap border-b border-gray-200",
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800",
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                " +
+                                            _vm._s(country.student.length) +
+                                            "\n                              "
+                                        ),
+                                      ]
+                                    ),
+                                  ]
+                                ),
+                              ]),
+                            ]
+                          )
+                        }),
+                      ],
+                      2
+                    ),
+                  ]
+                ),
               ]
             ),
           ]),
@@ -6092,7 +6259,7 @@ var render = function () {
                   "div",
                   [
                     _c("base-button", { attrs: { primary: "" } }, [
-                      _vm._v("Create class"),
+                      _vm._v("Create Class"),
                     ]),
                   ],
                   1
@@ -6753,13 +6920,13 @@ var render = function () {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form.classe_id,
-                              expression: "form.classe_id",
+                              value: _vm.form.classes_id,
+                              expression: "form.classes_id",
                             },
                           ],
                           staticClass:
                             "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
-                          attrs: { name: "classe_id" },
+                          attrs: { name: "classes_id" },
                           on: {
                             change: function ($event) {
                               var $$selectedVal = Array.prototype.filter
@@ -6772,7 +6939,7 @@ var render = function () {
                                 })
                               _vm.$set(
                                 _vm.form,
-                                "classe_id",
+                                "classes_id",
                                 $event.target.multiple
                                   ? $$selectedVal
                                   : $$selectedVal[0]

@@ -39,7 +39,7 @@
                                 Class
                                 </span>
 
-                                <select class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full" name="classe_id" v-model="form.classe_id">
+                                <select class="form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full" name="classes_id" v-model="form.classes_id">
                                     <option value="">Choose</option>
                                     <option :value="classe.id" v-for="classe in classes" :key="classe.index">
                                         {{classe.name}}
@@ -74,7 +74,7 @@ export default {
         name: "",
         date_of_birth:"",
         country_id: "",
-        classe_id: "",
+        classes_id: "",
       },
     };
   },

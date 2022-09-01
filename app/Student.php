@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $guarded = [];
-    protected $with = ['classe','country'];
+  
 
     public function country()
     {
@@ -16,6 +16,6 @@ class Student extends Model
 
     public function classe()
     {
-        return $this->belongsTo(Classes::class,'classe_id');
+        return $this->belongsTo(Classes::class,'classes_id');
     }
 }

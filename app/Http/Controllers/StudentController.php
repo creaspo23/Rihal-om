@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classes;
 use App\Country;
 use App\Student;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -13,7 +14,7 @@ class StudentController extends Controller
 
     public function index()
     {
-        $students = Student::latest()->simplePaginate(50);
+        $students = Student::with(['classe','country'])->latest()->simplePaginate(50);
         
         return inertia()->render('Dashboard/students/index', [
             'students' => $students,
@@ -35,17 +36,20 @@ class StudentController extends Controller
     public function store(Request $request)
     {
 
+ 
         $data = $request->validate([
             'name' => 'required',
             'date_of_birth' => 'required',
             'country_id' => 'required|exists:countries,id',
-            'classe_id' => 'required|exists:classes,id'
+            'classes_id' => 'required|exists:classes,id'
         ]);
+   
+        // $years = Carbon::parse($data['date_of_birth'])->age;
 
-
-
-        Student::create($data);
-
+ 
+       Student::create($data);
+ 
+  
         session()->flash('toast', [
             'type' => 'success',
             'message' => 'Student created successfully'
@@ -73,7 +77,7 @@ class StudentController extends Controller
             'name' => 'required',
             'date_of_birth' => 'required',
             'country_id' => 'required|exists:countries,id',
-            'classe_id' => 'required|exists:classes,id'
+            'classes_id' => 'required|exists:classes,id'
 
         ]);
 

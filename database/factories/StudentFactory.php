@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Student::class, function (Faker $faker) {
     return [
-        'classe_id' => function () {
+        'classes_id' => function () {
             return factory('App\Classes')->create()->id;
         },
         'country_id' => function () {
