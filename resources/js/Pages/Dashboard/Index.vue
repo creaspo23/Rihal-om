@@ -85,8 +85,37 @@
                             </div>
                         </div>
                     </div>
+                        <div class="w-full md:w-1/3 px-4">
+                        <div class="relative flex flex-col min-w-0 break-words bg-white rounded mt-6 xl:mb-0 shadow-lg">
+                            <div class="flex-auto p-4">
+                                <div class="flex flex-wrap">
+                                    <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                                        <h5 class="text-gray-500 uppercase font-bold text-xs">
+                                            Average age of students
+                                        </h5>
+                                        <span class="font-semibold text-xl text-gray-800">
+                                            {{parseInt(avarge)}}
+                        </span>
+                                    </div>
+                                    <div class="relative w-auto px-2 flex-initial">
+                                        <div
+                                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500">
+                                            <svg class="w-5 h-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                  
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
+               
         </div>
 
     <div class="col">
@@ -189,7 +218,7 @@
     import Layout from "../../Shared/Layout";
 
     export default {
-        props:['students_number','country_number','classe_number','classes','countires'],
+        props:['students_number','country_number','classe_number','classes','countires','avarge'],
         components: {Layout},
 
     }

@@ -2122,9 +2122,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['students_number', 'country_number', 'classe_number', 'classes', 'countires'],
+  props: ['students_number', 'country_number', 'classe_number', 'classes', 'countires', 'avarge'],
   components: {
     Layout: _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -5293,6 +5322,94 @@ var render = function () {
                                 _c("path", {
                                   attrs: {
                                     d: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-full md:w-1/3 px-4" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "relative flex flex-col min-w-0 break-words bg-white rounded mt-6 xl:mb-0 shadow-lg",
+              },
+              [
+                _c("div", { staticClass: "flex-auto p-4" }, [
+                  _c("div", { staticClass: "flex flex-wrap" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "relative w-full pr-4 max-w-full flex-grow flex-1",
+                      },
+                      [
+                        _c(
+                          "h5",
+                          {
+                            staticClass:
+                              "text-gray-500 uppercase font-bold text-xs",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        Average age of students\n                                    "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "font-semibold text-xl text-gray-800",
+                          },
+                          [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(parseInt(_vm.avarge)) +
+                                "\n                    "
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "relative w-auto px-2 flex-initial" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500",
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "w-5 h-5",
+                                attrs: {
+                                  fill: "none",
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "stroke-width": "2",
+                                  stroke: "currentColor",
+                                  viewBox: "0 0 24 24",
+                                },
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
                                   },
                                 }),
                               ]
