@@ -2836,7 +2836,7 @@ __webpack_require__.r(__webpack_exports__);
         name: '',
         date_of_birth: '',
         country_id: '',
-        classe_id: ''
+        classes_id: ''
       }
     };
   },
@@ -5069,7 +5069,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("layout", [
-    _c("div", { staticClass: "mx-auto w-full" }, [
+    _c("div", { staticClass: "mx-auto w-full " }, [
       _c("div", [
         _c("div", { staticClass: "flex flex-wrap -mx-4" }, [
           _c("div", { staticClass: "w-full md:w-1/3 px-4" }, [
@@ -7275,13 +7275,13 @@ var render = function () {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.form.classe_id,
-                            expression: "form.classe_id",
+                            value: _vm.form.classes_id,
+                            expression: "form.classes_id",
                           },
                         ],
                         staticClass:
                           "form-input border-gray-300 focus:border-indigo-400 focus:shadow-none focus:bg-white mt-1 block w-full",
-                        attrs: { name: "classe_id" },
+                        attrs: { name: "classes_id" },
                         on: {
                           change: function ($event) {
                             var $$selectedVal = Array.prototype.filter
@@ -7294,7 +7294,7 @@ var render = function () {
                               })
                             _vm.$set(
                               _vm.form,
-                              "classe_id",
+                              "classes_id",
                               $event.target.multiple
                                 ? $$selectedVal
                                 : $$selectedVal[0]

@@ -52,7 +52,7 @@ class StudentController extends Controller
   
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Student created successfully'
+            'message' => 'Student has been  created successfully'
         ]);
 
         return redirect()->route('students.index');
@@ -85,7 +85,7 @@ class StudentController extends Controller
 
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Student updated successfully'
+            'message' => 'Student has been  updated successfully'
         ]);
 
         return redirect()->route('students.index');
@@ -97,7 +97,7 @@ class StudentController extends Controller
 
         session()->flash('toast', [
             'type' => 'error',
-            'message' => 'Student deleted successfully'
+            'message' => 'Student has been  deleted successfully'
         ]);
 
         return redirect()->back();

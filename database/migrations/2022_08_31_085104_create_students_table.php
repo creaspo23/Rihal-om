@@ -17,8 +17,8 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('date_of_birth');
-            $table->foreignId('classes_id');
-            $table->foreignId('country_id');
+            $table->foreignId('classes_id')->onDelete('cascade');
+            $table->foreignId('country_id')->onDelete('cascade');
             $table->timestamps();
         });
     }

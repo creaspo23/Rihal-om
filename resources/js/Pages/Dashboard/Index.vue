@@ -1,6 +1,6 @@
 <template>
     <layout>
-        <div class="mx-auto w-full">
+        <div class="mx-auto w-full ">
             <div>
                 <!-- Card stats -->
                 <div class="flex flex-wrap -mx-4">

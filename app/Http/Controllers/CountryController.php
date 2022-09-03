@@ -20,9 +20,12 @@ class CountryController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate(['name' => 'required']);
-
+      
         Country::create($data);
-
+        session()->flash('toast', [
+            'type' => 'success',
+            'message' => 'country has been added successfully'
+        ]);
         return redirect()->back();
     }
 
@@ -34,7 +37,7 @@ class CountryController extends Controller
         
         session()->flash('toast', [
             'type' => 'success',
-            'message' => 'Country updated successfully'
+            'message' => 'Country  has been updated successfully'
         ]);
 
         return redirect()->back();
@@ -46,7 +49,7 @@ class CountryController extends Controller
 
         session()->flash('toast', [
             'type' => 'error',
-            'message' => 'country deleted successfully'
+            'message' => 'country has been  deleted successfully'
         ]);
 
         return redirect()->back();

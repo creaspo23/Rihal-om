@@ -11,7 +11,7 @@ class ClassController extends Controller
     public function index()
     {
         $classes = Classes::latest()->simplePaginate(50);
-     
+
         return inertia()->render('Dashboard/classes/index', [
             'classes' => $classes
         ]);
@@ -19,20 +19,24 @@ class ClassController extends Controller
 
     public function store(Request $request)
     {
-     
+
         $data = $request->validate(['name' => 'required']);
 
         Classes::create($data);
-      
+
+        session()->flash('toast', [
+            'type' => 'success',
+            'message' => 'class has been added  successfully'
+        ]);
         return redirect()->back();
     }
 
     public function update(Request $request, Classes $classe)
     {
         $data = $request->validate(['name' => 'required']);
-        
+
         $classe->update($data);
-        
+
         session()->flash('toast', [
             'type' => 'success',
             'message' => 'class updated successfully'
@@ -47,7 +51,7 @@ class ClassController extends Controller
 
         session()->flash('toast', [
             'type' => 'error',
-            'message' => 'Class deleted successfully'
+            'message' => 'Class  has been deleted successfully'
         ]);
 
         return redirect()->back();
