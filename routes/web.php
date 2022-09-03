@@ -32,6 +32,7 @@ Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::delete('/students/{student}', 'StudentController@destroy')->name('students.destroy');
     
 
+
     Route::get('/countries', 'CountryController@index')->name('countries.index');
     Route::post('/countries', 'CountryController@store')->name('countries.store');
     Route::put('/countries/{country}', 'CountryController@update')->name('countries.update');
