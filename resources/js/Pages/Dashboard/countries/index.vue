@@ -89,7 +89,7 @@ import Edit from '../countries/Edit'
 
                 this.form = '';
             },
-            Delete(category){
+            Delete(country){
                      this.$inertia.delete(`/dashboard/countries/${country.id}`);
             },
        
