@@ -39,7 +39,7 @@
                                 </tr>
                                 </thead>
                                 <tbody class="bg-white text-gray-700">
-                                <tr class="border-b border-gray-200" v-for="country in countries.data" :key="country.index">
+                                <tr class="border-b border-gray-200" v-for="country in countries.data" :key="country.id">
                                     <td class="px-6 py-4 whitespace-no-wrap">
                                         {{ country.id }}
                                     </td>

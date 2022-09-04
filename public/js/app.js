@@ -2653,7 +2653,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$inertia.post('/dashboard/countries', this.form);
       this.form = '';
     },
-    Delete: function Delete(category) {
+    Delete: function Delete(country) {
       this.$inertia["delete"]("/dashboard/countries/".concat(country.id));
     }
   }
@@ -6771,7 +6771,7 @@ var render = function () {
                           return _c(
                             "tr",
                             {
-                              key: country.index,
+                              key: country.id,
                               staticClass: "border-b border-gray-200",
                             },
                             [
