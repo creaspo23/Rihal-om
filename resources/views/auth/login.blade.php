@@ -10,7 +10,7 @@
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="mt-4 w-full">
-                        <input type="email" name="email" placeholder="Email address"
+                        <input type="email" name="email" placeholder="Email address" value="admin@admin.com"
                                class="w-full mt-2 py-3 px-4 bg-gray-100 text-gray-700 border border-gray-300 rounded  block appearance-none placeholder-gray-500 focus:outline-none focus:bg-white"/>
                         @error('email')
                         <p class="text-red-500 text-xs mt-4">
@@ -19,7 +19,7 @@
                         @enderror
                     </div>
                     <div class="mt-4 w-full">
-                        <input type="password" name="password" placeholder="Password"
+                        <input type="password" name="password" placeholder="Password" value="password"
                                class="w-full mt-2 py-3 px-4 bg-gray-100 text-gray-700 border border-gray-300 rounded  block appearance-none placeholder-gray-500 focus:outline-none focus:bg-white"/>
                         @error('password')
                         <p class="text-red-500 text-xs italic mt-4">
